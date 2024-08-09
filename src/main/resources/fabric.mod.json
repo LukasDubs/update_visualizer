@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "update_visualizer",
+  "version": "${version}",
+  "name": "update_visualizer",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/LukasDubs/update_visualizer"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/update_visualizer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "trdps.update_visualizer.client.Update_visualizerClient"
+    ],
+    "main": [
+      "trdps.update_visualizer.Update_visualizer"
+    ]
+  },
+  "mixins": [
+    "update_visualizer.mixins.json"
+  ],
+  "accessWidener" : "update_visualizer.accesswidener",
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}

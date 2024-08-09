@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "trdps.update_visualizer.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ChainRestrictedNeighborUpdaterMixin",
+    "CustomPayloadMixin1",
+    "CustomPayloadS2CPacketMixin",
+    "MinecraftServerMixin",
+    "NetworkStateBuilderMixin",
+    "PlayerManagerMixin",
+    "ServerPlaynetworkHandlerMixin",
+    "TickStepS2CPacketMixin",
+    "UpdateTickRateS2CPacketMixin"
+  ],
+  "client": [
+    "ClientPlayNetworkHandlerMixin",
+    "GameRendererMixin",
+    "RenderSystemMixin",
+    "ShapeIndexBufferAccessor",
+    "VertexBufferMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

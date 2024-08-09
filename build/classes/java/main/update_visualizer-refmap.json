@@ -1,0 +1,86 @@
+{
+  "mappings": {
+    "trdps/update_visualizer/mixins/ChainRestrictedNeighborUpdaterMixin": {
+      "enqueue": "Lnet/minecraft/class_7159;method_41706(Lnet/minecraft/class_2338;Lnet/minecraft/class_7159$class_7162;)V"
+    },
+    "trdps/update_visualizer/mixins/ClientPlayNetworkHandlerMixin": {
+      "warnOnUnknownPayload": "Lnet/minecraft/class_634;method_52801(Lnet/minecraft/class_8710;)V"
+    },
+    "trdps/update_visualizer/mixins/CustomPayloadMixin1": {
+      "getCodec(Lnet/minecraft/util/Identifier;)Lnet/minecraft/network/codec/PacketCodec;": "Lnet/minecraft/class_8710$1;method_56487(Lnet/minecraft/class_2960;)Lnet/minecraft/class_9139;",
+      "net.minecraft.network.packet.CustomPayload$1": "net/minecraft/class_8710$1"
+    },
+    "trdps/update_visualizer/mixins/CustomPayloadS2CPacketMixin": {
+      "<clinit>": "Lnet/minecraft/class_2658;<clinit>()V",
+      "Lnet/minecraft/util/Util;make(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;": "Lnet/minecraft/class_156;method_654(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;"
+    },
+    "trdps/update_visualizer/mixins/GameRendererMixin": {
+      "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V": "Lnet/minecraft/class_3695;method_15405(Ljava/lang/String;)V",
+      "renderWorld": "Lnet/minecraft/class_757;method_3188(Lnet/minecraft/class_9779;)V"
+    },
+    "trdps/update_visualizer/mixins/MinecraftServerMixin": {
+      "loadWorld": "Lnet/minecraft/server/MinecraftServer;method_3735()V"
+    },
+    "trdps/update_visualizer/mixins/PlayerManagerMixin": {
+      "onPlayerConnect": "Lnet/minecraft/class_3324;method_14570(Lnet/minecraft/class_2535;Lnet/minecraft/class_3222;Lnet/minecraft/class_8792;)V"
+    },
+    "trdps/update_visualizer/mixins/ServerPlaynetworkHandlerMixin": {
+      "onCustomPayload": "Lnet/minecraft/class_3244;method_52392(Lnet/minecraft/class_2817;)V"
+    },
+    "trdps/update_visualizer/mixins/ShapeIndexBufferAccessor": {
+      "id": "field_27335:I"
+    },
+    "trdps/update_visualizer/mixins/TickStepS2CPacketMixin": {
+      "apply(Lnet/minecraft/network/listener/ClientPlayPacketListener;)V": "Lnet/minecraft/class_8914;method_54667(Lnet/minecraft/class_2602;)V"
+    },
+    "trdps/update_visualizer/mixins/UpdateTickRateS2CPacketMixin": {
+      "apply(Lnet/minecraft/network/listener/ClientPlayPacketListener;)V": "Lnet/minecraft/class_8913;method_54665(Lnet/minecraft/class_2602;)V"
+    },
+    "trdps/update_visualizer/mixins/VertexBufferMixin": {
+      "uploadIndexBuffer(Lnet/minecraft/client/render/BuiltBuffer$DrawParameters;Ljava/nio/ByteBuffer;)Lcom/mojang/blaze3d/systems/RenderSystem$ShapeIndexBuffer;": "Lnet/minecraft/class_291;method_43443(Lnet/minecraft/class_9801$class_4574;Ljava/nio/ByteBuffer;)Lcom/mojang/blaze3d/systems/RenderSystem$class_5590;"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "trdps/update_visualizer/mixins/ChainRestrictedNeighborUpdaterMixin": {
+        "enqueue": "Lnet/minecraft/class_7159;method_41706(Lnet/minecraft/class_2338;Lnet/minecraft/class_7159$class_7162;)V"
+      },
+      "trdps/update_visualizer/mixins/ClientPlayNetworkHandlerMixin": {
+        "warnOnUnknownPayload": "Lnet/minecraft/class_634;method_52801(Lnet/minecraft/class_8710;)V"
+      },
+      "trdps/update_visualizer/mixins/CustomPayloadMixin1": {
+        "getCodec(Lnet/minecraft/util/Identifier;)Lnet/minecraft/network/codec/PacketCodec;": "Lnet/minecraft/class_8710$1;method_56487(Lnet/minecraft/class_2960;)Lnet/minecraft/class_9139;",
+        "net.minecraft.network.packet.CustomPayload$1": "net/minecraft/class_8710$1"
+      },
+      "trdps/update_visualizer/mixins/CustomPayloadS2CPacketMixin": {
+        "<clinit>": "Lnet/minecraft/class_2658;<clinit>()V",
+        "Lnet/minecraft/util/Util;make(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;": "Lnet/minecraft/class_156;method_654(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;"
+      },
+      "trdps/update_visualizer/mixins/GameRendererMixin": {
+        "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V": "Lnet/minecraft/class_3695;method_15405(Ljava/lang/String;)V",
+        "renderWorld": "Lnet/minecraft/class_757;method_3188(Lnet/minecraft/class_9779;)V"
+      },
+      "trdps/update_visualizer/mixins/MinecraftServerMixin": {
+        "loadWorld": "Lnet/minecraft/server/MinecraftServer;method_3735()V"
+      },
+      "trdps/update_visualizer/mixins/PlayerManagerMixin": {
+        "onPlayerConnect": "Lnet/minecraft/class_3324;method_14570(Lnet/minecraft/class_2535;Lnet/minecraft/class_3222;Lnet/minecraft/class_8792;)V"
+      },
+      "trdps/update_visualizer/mixins/ServerPlaynetworkHandlerMixin": {
+        "onCustomPayload": "Lnet/minecraft/class_3244;method_52392(Lnet/minecraft/class_2817;)V"
+      },
+      "trdps/update_visualizer/mixins/ShapeIndexBufferAccessor": {
+        "id": "field_27335:I"
+      },
+      "trdps/update_visualizer/mixins/TickStepS2CPacketMixin": {
+        "apply(Lnet/minecraft/network/listener/ClientPlayPacketListener;)V": "Lnet/minecraft/class_8914;method_54667(Lnet/minecraft/class_2602;)V"
+      },
+      "trdps/update_visualizer/mixins/UpdateTickRateS2CPacketMixin": {
+        "apply(Lnet/minecraft/network/listener/ClientPlayPacketListener;)V": "Lnet/minecraft/class_8913;method_54665(Lnet/minecraft/class_2602;)V"
+      },
+      "trdps/update_visualizer/mixins/VertexBufferMixin": {
+        "uploadIndexBuffer(Lnet/minecraft/client/render/BuiltBuffer$DrawParameters;Ljava/nio/ByteBuffer;)Lcom/mojang/blaze3d/systems/RenderSystem$ShapeIndexBuffer;": "Lnet/minecraft/class_291;method_43443(Lnet/minecraft/class_9801$class_4574;Ljava/nio/ByteBuffer;)Lcom/mojang/blaze3d/systems/RenderSystem$class_5590;"
+      }
+    }
+  }
+}

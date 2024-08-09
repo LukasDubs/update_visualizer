@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="named:intermediary" />
+        <option name="inMapFileNamedIntermediary" value="C:\Users\LukasDubs\.gradle\caches\fabric-loom\1.21\net.fabricmc.yarn.1_21.1.21+build.9-v2\mappings.tiny" />
+        <option name="outMapFileNamedIntermediary" value="C:\Users\LukasDubs\OneDrive - RDT René Dubs Technics\Dokumente\update_visualizer\build\loom-cache\mixin-map-net.fabricmc.yarn.1_21.1.21+build.9-v2.main.tiny" />
+        <option name="outRefMapFile" value="C:\Users\LukasDubs\OneDrive - RDT René Dubs Technics\Dokumente\update_visualizer\build\classes\java\main\update_visualizer-refmap.json" />
+        <option name="quiet" value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-fabric/0.4.0/37e5d2590769ab4e465dd140f8f1efe42f5fda9e/mixinextras-fabric-0.4.0.jar" />
+        </processorPath>
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="21" />
+  </component>
+</project>
