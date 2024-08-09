@@ -5,11 +5,11 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ChainRestrictedNeighborUpdaterMixin",
-    "CustomPayloadMixin1",
+    "CustomPayloadC2SPacketMixin",
     "CustomPayloadS2CPacketMixin",
     "MinecraftServerMixin",
-    "NetworkStateBuilderMixin",
     "PlayerManagerMixin",
+    "PlayStateFactoriesMixin",
     "ServerPlaynetworkHandlerMixin",
     "TickStepS2CPacketMixin",
     "UpdateTickRateS2CPacketMixin"

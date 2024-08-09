@@ -1,6 +1,4 @@
 v1	named	intermediary
-FIELD	trdps/update_visualizer/mixins/CustomPayloadMixin1	Ljava/util/Map;	field_48658	field_48658
-FIELD	trdps/update_visualizer/mixins/CustomPayloadMixin1	Lnet/minecraft/network/packet/CustomPayload$CodecFactory;	field_48659	field_48659
 FIELD	trdps/update_visualizer/mixins/GameRendererMixin	Lnet/minecraft/client/MinecraftClient;	client	field_4015
 FIELD	trdps/update_visualizer/mixins/ServerPlaynetworkHandlerMixin	Lnet/minecraft/server/network/ServerPlayerEntity;	player	field_14140
 FIELD	trdps/update_visualizer/mixins/UpdateTickRateS2CPacketMixin	Z	isFrozen	comp_2015

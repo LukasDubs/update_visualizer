@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 public class Update_visualizerClient implements ClientModInitializer {
 
     public static MinecraftClient mc;
-    public static final Logger LOGGER = LoggerFactory.getLogger(MinecraftClient.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(Update_visualizerClient.class);
 
     @Override
     public void onInitializeClient() {
