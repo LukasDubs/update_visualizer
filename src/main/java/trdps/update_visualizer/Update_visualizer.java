@@ -15,6 +15,7 @@ public class Update_visualizer implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MinecraftServer.class);
     public static final List<ServerPlayerEntity> update_visualizerPlayers = new ArrayList<>();
     public static MinecraftServer server;
+
     @Override
     public void onInitialize() {
 

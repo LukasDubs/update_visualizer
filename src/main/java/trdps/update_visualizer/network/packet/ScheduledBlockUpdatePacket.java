@@ -13,20 +13,31 @@ import trdps.update_visualizer.render.BoxRenderer;
 
 import java.awt.*;
 
-public record ScheduledBlockUpdatePacket(BlockPos pos, Color color) implements Packet<ClientPlayPacketListener> {
+public record ScheduledBlockUpdatePacket(UpdateData[] data) implements Packet<ClientPlayPacketListener> {
 
     public static final PacketType<ScheduledBlockUpdatePacket> PACKET_TYPE = new PacketType<>(NetworkSide.CLIENTBOUND, Identifier.of(Update_visualizer.MODID, "blockupdate"));
 
     public static final PacketCodec<PacketByteBuf, ScheduledBlockUpdatePacket> CODEC = Packet.createCodec(ScheduledBlockUpdatePacket::write, ScheduledBlockUpdatePacket::new);
 
     public ScheduledBlockUpdatePacket(PacketByteBuf buf) {
-        this(buf.readBlockPos(), new Color(buf.readInt(), true));
+        this(readData(buf));
     }
 
+    private static UpdateData[] readData(PacketByteBuf buf) {
+        int len = buf.readInt();
+        UpdateData[] dt = new UpdateData[len];
+        for(int i = 0; i < len; i++) {
+            dt[i] = new UpdateData(buf.readBlockPos(), new Color(buf.readInt()));
+        }
+        return dt;
+    }
 
     private void write(PacketByteBuf buf) {
-        buf.writeBlockPos(pos);
-        buf.writeInt(color.getRGB());
+        buf.writeInt(data.length);
+        for (UpdateData dta : data) {
+            buf.writeBlockPos(dta.pos);
+            buf.writeInt(dta.c.getRGB());
+        }
     }
 
     @Override
@@ -36,6 +47,10 @@ public record ScheduledBlockUpdatePacket(BlockPos pos, Color color) implements P
 
     @Override
     public void apply(ClientPlayPacketListener listener) {
-        BoxRenderer.putBox(pos, color);
+        for (UpdateData datum : data) {
+            BoxRenderer.putBox(datum.pos, datum.c);
+        }
     }
+
+    public record UpdateData(BlockPos pos, Color c) {}
 }
