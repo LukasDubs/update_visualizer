@@ -61,11 +61,11 @@ public class BoxRenderer {
         GlStateManager._glBindBuffer(GL32C.GL_ARRAY_BUFFER, 0);
         GlStateManager._glBindBuffer(GL32C.GL_ELEMENT_ARRAY_BUFFER, CURRENT_IBO);
 
-        vertex_buf = BufferUtils.createByteBuffer(0x1000);
+        vertex_buf = BufferUtils.createByteBuffer(0x10000);
         vb_start = memAddress0(vertex_buf);
         vb_current = vb_start;
 
-        index_buf = BufferUtils.createByteBuffer(0x1000);
+        index_buf = BufferUtils.createByteBuffer(0x10000);
         ib_start = memAddress0(index_buf);
         ib_current = ib_start;
 
@@ -109,7 +109,7 @@ public class BoxRenderer {
 
     }
 
-    private static void putVertex(Vec3d v, Color c) {
+    private static synchronized void putVertex(Vec3d v, Color c) {
         memPutFloat(vb_current, (float)v.x);
         memPutFloat(vb_current + 4, (float)v.y);
         memPutFloat(vb_current + 8, (float)v.z);
@@ -120,36 +120,38 @@ public class BoxRenderer {
         vb_current += 16;
     }
 
-    private static void putIndices(int[] inds) {
+    private static synchronized void putIndices(int[] inds) {
         for(int i : inds) {
             memPutInt(ib_current, i);
             ib_current += 4;
         }
     }
 
-    private static void checkVBExpansion(int length){
-        int offset = (int)(vb_current - vb_start);
-        if(vertex_buf.capacity() < offset + length) {
+    private static synchronized void checkVBExpansion(int length){
+        long b_len = vb_current - vb_start;
+        if(vertex_buf.capacity() < b_len + length) {
             ByteBuffer ni = BufferUtils.createByteBuffer(vertex_buf.capacity() + 0x1000);
-            memCopy(vertex_buf, ni);
+            long ni_s = memAddress0(ni);
+            memCopy(vb_start, ni_s, b_len);
             vertex_buf = ni;
             vb_start = memAddress0(vertex_buf);
-            vb_current = vb_start + (long)offset;
+            vb_current = vb_start + b_len;
         }
     }
 
-    private static void checkIBExpansion(int length){
-        int offset = (int)(ib_current - ib_start);
-        if(index_buf.capacity() < offset + length) {
+    private static synchronized void checkIBExpansion(int length){
+        long b_len = ib_current - ib_start;
+        if(index_buf.capacity() < b_len + length) {
             ByteBuffer ni = BufferUtils.createByteBuffer(index_buf.capacity() + 0x1000);
-            memCopy(index_buf, ni);
+            long ni_s = memAddress0(ni);
+            memCopy(ib_start, ni_s, b_len);
             index_buf = ni;
-            ib_start = memAddress0(index_buf);
-            ib_current = ib_start + (long)offset;
+            ib_start = ni_s;
+            ib_current = ib_start + b_len;
         }
     }
 
-    public static void putLine(Vec3d p1, Vec3d p2, Color color) {
+    public static synchronized void putLine(Vec3d p1, Vec3d p2, Color color) {
 
         checkVBExpansion(32);
 
@@ -167,7 +169,7 @@ public class BoxRenderer {
 
     }
 
-    public static void putBox(Vec3i pos, Color c) {
+    public static synchronized void putBox(Vec3i pos, Color c) {
         Vec3d p = Vec3d.of(pos);
 
         checkVBExpansion(8 * 32);

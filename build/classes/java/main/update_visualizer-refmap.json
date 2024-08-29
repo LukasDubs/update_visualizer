@@ -1,7 +1,8 @@
 {
   "mappings": {
     "trdps/update_visualizer/mixins/ChainRestrictedNeighborUpdaterMixin": {
-      "enqueue": "Lnet/minecraft/class_7159;method_41706(Lnet/minecraft/class_2338;Lnet/minecraft/class_7159$class_7162;)V"
+      "enqueue": "Lnet/minecraft/class_7159;method_41706(Lnet/minecraft/class_2338;Lnet/minecraft/class_7159$class_7162;)V",
+      "runQueuedUpdates": "Lnet/minecraft/class_7159;method_41702()V"
     },
     "trdps/update_visualizer/mixins/ClientPlayNetworkHandlerMixin": {
       "warnOnUnknownPayload": "Lnet/minecraft/class_634;method_52801(Lnet/minecraft/class_8710;)V"
@@ -16,7 +17,7 @@
     },
     "trdps/update_visualizer/mixins/GameRendererMixin": {
       "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V": "Lnet/minecraft/class_3695;method_15405(Ljava/lang/String;)V",
-      "renderWorld": "Lnet/minecraft/class_757;method_3188(Lnet/minecraft/class_9779;)V"
+      "renderWorld(Lnet/minecraft/client/render/RenderTickCounter;)V": "Lnet/minecraft/class_757;method_3188(Lnet/minecraft/class_9779;)V"
     },
     "trdps/update_visualizer/mixins/MinecraftServerMixin": {
       "loadWorld": "Lnet/minecraft/server/MinecraftServer;method_3735()V"
@@ -46,7 +47,8 @@
   "data": {
     "named:intermediary": {
       "trdps/update_visualizer/mixins/ChainRestrictedNeighborUpdaterMixin": {
-        "enqueue": "Lnet/minecraft/class_7159;method_41706(Lnet/minecraft/class_2338;Lnet/minecraft/class_7159$class_7162;)V"
+        "enqueue": "Lnet/minecraft/class_7159;method_41706(Lnet/minecraft/class_2338;Lnet/minecraft/class_7159$class_7162;)V",
+        "runQueuedUpdates": "Lnet/minecraft/class_7159;method_41702()V"
       },
       "trdps/update_visualizer/mixins/ClientPlayNetworkHandlerMixin": {
         "warnOnUnknownPayload": "Lnet/minecraft/class_634;method_52801(Lnet/minecraft/class_8710;)V"
@@ -61,7 +63,7 @@
       },
       "trdps/update_visualizer/mixins/GameRendererMixin": {
         "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V": "Lnet/minecraft/class_3695;method_15405(Ljava/lang/String;)V",
-        "renderWorld": "Lnet/minecraft/class_757;method_3188(Lnet/minecraft/class_9779;)V"
+        "renderWorld(Lnet/minecraft/client/render/RenderTickCounter;)V": "Lnet/minecraft/class_757;method_3188(Lnet/minecraft/class_9779;)V"
       },
       "trdps/update_visualizer/mixins/MinecraftServerMixin": {
         "loadWorld": "Lnet/minecraft/server/MinecraftServer;method_3735()V"
